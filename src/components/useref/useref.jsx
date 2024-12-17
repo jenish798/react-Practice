@@ -11,6 +11,7 @@ const NewRef = () =>{
 
     return(
         <div>
+            <h2>Use Ref</h2>
             <input ref={inputRef} type="text" />
             <button onClick={focusInput}>Focus Input</button>
         </div>
