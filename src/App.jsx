@@ -8,6 +8,7 @@ import DynamicForm from "./components/dynamicform/dynamicform"
 import Traffic from "./components/traffic/traffic"
 import {NewRef,CountRef,NameRef, TimeRef} from "./components/useref/useref"
 import NewReducer from "./components/usereducer"
+import NewReducer2 from "./components/reducer/reducer"
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
       <NameRef/>
       <TimeRef/>
       <NewReducer/>
+      <NewReducer2/>
     </>
   )
 }
