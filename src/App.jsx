@@ -9,12 +9,16 @@ import Traffic from "./components/traffic/traffic"
 import {NewRef,CountRef,NameRef, TimeRef} from "./components/useref/useref"
 import NewReducer from "./components/usereducer"
 import NewReducer2 from "./components/reducer/reducer"
+import Map from "./components/map/map"
+import Sta from "./components/useState"
 
 function App() {
 
   return (
     <>
       <h1>Home page</h1>
+      <Sta/>
+      <Map/>
       <Carousel/>
       <Star/>
       <Search/>
