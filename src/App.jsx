@@ -11,6 +11,8 @@ import NewReducer from "./components/usereducer"
 import NewReducer2 from "./components/reducer/reducer"
 import Map from "./components/map/map"
 import Sta from "./components/useState"
+import ChildComponent from "./components/props/child"
+import ParentComponent from "./components/props/parent"
 
 function App() {
 
@@ -33,6 +35,8 @@ function App() {
       <TimeRef/>
       <NewReducer/>
       <NewReducer2/>
+      <ParentComponent/>
+      {/* <ChildComponent/> */}
     </>
   )
 }
