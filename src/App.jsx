@@ -13,6 +13,8 @@ import Map from "./components/map/map"
 import Sta from "./components/useState"
 import ChildComponent from "./components/props/child"
 import ParentComponent from "./components/props/parent"
+import ParentComponent1 from "./components/useCallback/use"
+import Component1 from "./components/context/userContext"
 
 function App() {
 
@@ -37,6 +39,8 @@ function App() {
       <NewReducer2/>
       <ParentComponent/>
       {/* <ChildComponent/> */}
+      <ParentComponent1/>
+      <Component1/>
     </>
   )
 }
