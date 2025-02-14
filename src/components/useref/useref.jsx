@@ -1,78 +1,37 @@
 import { useEffect, useRef, useState } from "react"
 
-
 const NewRef = () =>{
-
-    const inputRef = useRef(null);
-
-    const focusInput = () =>{
-        inputRef.current.focus();
-    };
-
-    return(
-        <div>
-            <h2>Use Ref</h2>
-            <input ref={inputRef} type="text" />
-            <button onClick={focusInput}>Focus Input</button>
-        </div>
-    )
-}
-
-const CountRef = () =>{
-const [count,setCount] = useState(0);
-const InputNew = useRef(0);
-
+const inputRef = useRef(null);
+const messagesRef = useRef([]);
+const [messages, setMessages] = useState([]);
+ 
 useEffect(()=>{
-    InputNew.current++;
-})
+    inputRef.current.focus();
+}, []);
+
+const sendMessage = ()=>{
+    const newMessage = inputRef.current.value.trim();
+    if (newMessage !== ''){
+        messagesRef.current.push(newMessage);
+        setMessages([...messagesRef.current]);
+        inputRef.current.value= ""
+    }
+};
 return(
     <div>
-        <p>Count: {count}</p>
-        <p>This component has re-rendered {InputNew.current} times</p>
-        <button onClick={()=>setCount(count+1)}>Increment</button>
+        <h2>Live chat</h2>
+        <input ref={inputRef} type="text" placeholder="'Type a message..."/>
+        <button onClick={sendMessage}>Send</button>
+
+        <h3>Chat History:</h3>
+        <ul>
+            {messages.map((msg, index)=>(<li key={index}>{msg}</li>))}
+        </ul>
     </div>
 )
+
 }
 
-const NameRef = () =>{
-    const [name,SetName] = useState('jenish')
-    const NameRef = useRef('');
-
-    useEffect(()=>{
-        NameRef.current = name;
-    },[name])
-
-    return(
-        <div>
-            <p>Current Name:{name}</p>
-            <p>Previous Name:{NameRef.current}</p>
-            <input type="text"
-            value={name}
-            onChange={(e)=>SetName(e.target.value)}/>
-        </div>
-    )
-}
-
-const TimeRef = () =>{
-
-    const [time,setTime] = useState(0);
-    const TimeRef = useRef(null);
-
-    useEffect(()=>{
-        TimeRef.current = setInterval(()=>{
-            setTime((prevCount)=>prevCount+1);
-        },1000);
-
-        return ()=>{
-            clearInterval(TimeRef.current)
-        }
-    },[]);
-
-    return(
-        <p>Count:{time}</p>
-    )
-}
-
-export {NewRef,CountRef,NameRef,TimeRef}
+export default NewRef
 
 

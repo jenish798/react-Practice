@@ -6,7 +6,7 @@ import Star from "./components/star/star"
 import Forms from "./components/form/form"
 import DynamicForm from "./components/dynamicform/dynamicform"
 import Traffic from "./components/traffic/traffic"
-import {NewRef,CountRef,NameRef, TimeRef} from "./components/useref/useref"
+import NewRef from "./components/useref/useref"
 import NewReducer from "./components/usereducer"
 import NewReducer2 from "./components/reducer/reducer"
 import Map from "./components/map/map"
@@ -32,13 +32,9 @@ function App() {
       <DynamicForm/>
       <Traffic/>
       <NewRef/>
-      <CountRef/>
-      <NameRef/>
-      <TimeRef/>
       <NewReducer/>
       <NewReducer2/>
       <ParentComponent/>
-      {/* <ChildComponent/> */}
       <ParentComponent1/>
       <Component1/>
     </>
