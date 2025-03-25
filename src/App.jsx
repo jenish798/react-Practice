@@ -15,11 +15,27 @@ import ChildComponent from "./components/props/child"
 import ParentComponent from "./components/props/parent"
 import ParentComponent1 from "./components/useCallback/use"
 import Component1 from "./components/context/userContext"
+import { BrowserRouter as Router,Routes,Route, useParams } from "react-router-dom"
+import Home from "./Home"
+import UserProfile from "./UserProfile"
+import Form from "./Form"
+
+function UserProfileWrapper(){
+  const params = useParams();
+  return <UserProfile params = {params}/>
+}
 
 function App() {
 
   return (
     <>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/user/:userId" element={<UserProfile/>}/>
+      </Routes>
+    </Router>
+    <Form/>
       <h1>Home page</h1>
       <Sta/>
       <Map/>
