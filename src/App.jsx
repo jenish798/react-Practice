@@ -26,13 +26,18 @@ import Navbar from "./pages/Navbar/Navbar"
 import { Provider } from "react-redux"
 import store from "./app/store"
 import PrivateRouter from "./pages/Navbar/privateRouter"
+import Button from "./components/HOC/button"
+import WithClickTracking from "./components/HOC/withclickTracking"
 
 function UserProfileWrapper(){
   const params = useParams();
   return <UserProfile params = {params}/>
 }
 
+
 function App() {
+
+  const Buttonwithtracking = WithClickTracking(Button);
 
   return (
     <Provider store={store}>
@@ -54,6 +59,11 @@ function App() {
       </Routes>
     </Router> */}
     <Form/>
+
+    <Buttonwithtracking 
+    label="HOC Button" 
+    trackingInfo={{amount: "2000", user: "Jenish"}}
+    />
       <h1>Home page</h1>
       <Sta/>
       <Map/>
